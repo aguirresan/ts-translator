@@ -7,3 +7,6 @@ export interface DeeplTranslation {
         text: string
     }];
 }
+
+export const HOST_URL = 'https://api-free.deepl.com';
+export const REQ_PATH = 'v2/translate';

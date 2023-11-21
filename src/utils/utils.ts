@@ -1,4 +1,4 @@
-import { Lang, SUPPORTED_LANGS } from './constants';
+import { HOST_URL, Lang, REQ_PATH, SUPPORTED_LANGS } from './constants';
 import dotenv from 'dotenv';
 
 export const langGuard = (inputLangs: string[]): inputLangs is Lang[] => {
@@ -7,8 +7,8 @@ export const langGuard = (inputLangs: string[]): inputLangs is Lang[] => {
 
 export const useEnvVars = () => {
     dotenv.config();
-    const hostUrl = process.env.HOST_URL;
-    const path = process.env.REQ_PATH;
+    const hostUrl = process.env.HOST_URL ?? HOST_URL;
+    const path = process.env.REQ_PATH ?? REQ_PATH;
     const deeplApiToken = process.env.DEEPL_API_TOKEN;
 
     return {
